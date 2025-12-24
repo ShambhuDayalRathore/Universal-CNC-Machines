@@ -1,14 +1,10 @@
-import { Helmet } from "react-helmet";
 import Slider from "../components/Slider";
+import Seo from "../components/Seo";
 
 function Home() {
     return (
         <>
-            <Helmet>
-                <title>My Website | React & Node</title>
-                <meta name="description" content="Professional React website with Node backend" />
-                <meta name="keywords" content="React, Node, Website, Portfolio" />
-            </Helmet>
+            <Seo />
             <div className="page">
                 <Slider />
                 <h1>Welcome to Our Website</h1>
