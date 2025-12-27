@@ -33,6 +33,12 @@ function Home() {
                                 <li>✔ Customized Packing</li>
                                 <li>✔ Team of Experts</li>
                                 <li>✔ Product Innovation</li>
+                                <li>✔ Timely Delivery</li>
+                                <li>✔ Stringent Quality</li>
+                                <li>✔ Development Skills</li>
+                                <li>✔ Customized Packing</li>
+                                <li>✔ Team of Experts</li>
+                                <li>✔ Product Innovation</li>
                             </ul>
 
                             <Link to="/about" className="btn btn-success mt-2">
