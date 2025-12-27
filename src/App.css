@@ -140,3 +140,101 @@ body {
   color: #009879;
   font-weight: bold;
 }
+
+
+.navbar-brand {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-item .nav-link {
+  padding: 10px 15px;
+  font-weight: 500;
+}
+
+/* Reduce title size on mobile */
+.main-text {
+  font-size: 1.9rem;
+}
+
+@media (max-width: 576px) {
+  .main-text {
+    font-size: 1.4rem;
+  }
+
+  .small-text {
+    font-size: 0.9rem;
+  }
+
+  .home-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-img {
+    border-radius: 6px;
+  }
+
+  .counter-box {
+    padding: 15px;
+  }
+
+  .video-box {
+    height: 220px !important;
+  }
+
+  .mobile-features li {
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+}
+
+/* Video placeholder */
+.video-box {
+  height: 350px;
+  background: #e8e8e8 url("https://cdn-icons-png.flaticon.com/512/2875/2875356.png") center no-repeat;
+  background-size: 60px;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background: #000;
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-to-top:hover {
+  background: #444;
+  transform: translateY(-4px);
+}
+
+.contact-banner {
+  background: url("https://picsum.photos/1200/250?factory") center/cover;
+}
+
+.contact-box {
+  background: #02636e;
+}
+
+.form-control {
+  height: 45px;
+}
+
+textarea.form-control {
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .contact-box {
+    text-align: center;
+  }
+}

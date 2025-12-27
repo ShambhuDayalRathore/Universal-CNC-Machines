@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BackToTop from "./BackToTop";
 
 function Footer() {
     return (
@@ -81,7 +82,7 @@ function Footer() {
                     </div>
 
                 </div>
-
+                <BackToTop />
                 <hr className="footer-line" />
 
                 <div className="text-center pb-3 small">

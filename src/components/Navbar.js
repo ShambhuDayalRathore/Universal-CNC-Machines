@@ -1,22 +1,61 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Navbar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div className="container">
-                <Link className="navbar-brand" to="/">Universal CNC Machines</Link>
+    const [isOpen, setIsOpen] = useState(false);
 
-                <div className="collapse navbar-collapse show">
+    const toggleNavbar = () => setIsOpen(!isOpen);
+    const closeNavbar = () => setIsOpen(false); // closes menu when clicking a link
+
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+            <div className="container">
+
+                {/* Brand */}
+                <Link className="navbar-brand fw-bold" to="/" onClick={closeNavbar}>
+                    Universal CNC Machines
+                </Link>
+
+                {/* MOBILE BUTTON */}
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    aria-controls="navbarNav"
+                    aria-expanded={isOpen ? "true" : "false"}
+                    aria-label="Toggle navigation"
+                    onClick={toggleNavbar}
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                {/* COLLAPSIBLE MENU */}
+                <div
+                    className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
+                    id="navbarNav"
+                >
                     <ul className="navbar-nav ms-auto">
-                        <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/gallery">Gallery</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/services">Services</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/reach-us">Reach Us</Link></li>
-                        {/* <li className="nav-item"><Link className="nav-link" to="/admin">Admin</Link></li> */}
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/" onClick={closeNavbar}>Home</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/about" onClick={closeNavbar}>About</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/gallery" onClick={closeNavbar}>Gallery</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/services" onClick={closeNavbar}>Services</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/contact" onClick={closeNavbar}>Contact Us</Link>
+                        </li>
                     </ul>
                 </div>
+
             </div>
         </nav>
     );
