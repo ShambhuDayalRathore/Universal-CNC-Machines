@@ -61,16 +61,16 @@ function Home() {
                     <h3 className="fw-bold">Gallery</h3>
                     <div className="row mt-4">
                         <div className="col-md-3">
-                            <img src="https://picsum.photos/300/200?1" className="img-fluid rounded shadow mb-3" />
+                            <img src="https://picsum.photos/300/200?1" className="img-fluid rounded shadow mb-3" alt="CNC Machine" />
                         </div>
                         <div className="col-md-3">
-                            <img src="https://picsum.photos/300/200?2" className="img-fluid rounded shadow mb-3" />
+                            <img src="https://picsum.photos/300/200?2" className="img-fluid rounded shadow mb-3" alt="CNC Machine" />
                         </div>
                         <div className="col-md-3">
-                            <img src="https://picsum.photos/300/200?3" className="img-fluid rounded shadow mb-3" />
+                            <img src="https://picsum.photos/300/200?3" className="img-fluid rounded shadow mb-3" alt="CNC Machine" />
                         </div>
                         <div className="col-md-3">
-                            <img src="https://picsum.photos/300/200?4" className="img-fluid rounded shadow mb-3" />
+                            <img src="https://picsum.photos/300/200?4" className="img-fluid rounded shadow mb-3" alt="CNC Machine" />
                         </div>
                     </div>
 
