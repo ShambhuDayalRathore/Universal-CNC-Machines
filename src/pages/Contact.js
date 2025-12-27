@@ -13,8 +13,8 @@ function Contact() {
     });
 
     // ===== REQUIRED STATES (YOU WERE MISSING THESE) =====
-    const [errors, setErrors] = useState({});
-    const [sent, setSent] = useState(false);
+    // const [errors, setErrors] = useState({});
+    // const [sent, setSent] = useState(false);
 
     // ===== HANDLE INPUT =====
     const handleChange = (e) => {
