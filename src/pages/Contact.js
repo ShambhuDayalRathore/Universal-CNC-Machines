@@ -1,23 +1,80 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 function Contact() {
+    // ===== FORM DATA STATE =====
     const [formData, setFormData] = useState({
-        message: "",
         fullName: "",
-        companyName: "",
         mobile: "",
         email: "",
+        companyName: "",
         city: "",
-        country: ""
+        message: ""
     });
 
+    // ===== REQUIRED STATES (YOU WERE MISSING THESE) =====
+    const [errors, setErrors] = useState({});
+    const [sent, setSent] = useState(false);
+
+    // ===== HANDLE INPUT =====
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    // ===== VALIDATION =====
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.fullName.trim()) newErrors.fullName = "Full Name required";
+        if (!formData.mobile.trim()) newErrors.mobile = "Mobile number required";
+
+        if (!/^[0-9]{10}$/.test(formData.mobile))
+            newErrors.mobile = "Enter 10 digit mobile number";
+
+        if (!formData.email.trim()) newErrors.email = "Email required";
+        if (!formData.message.trim()) newErrors.message = "Message required";
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    // ===== SUBMIT FORM =====
     const submitForm = (e) => {
         e.preventDefault();
-        alert("Inquiry Submitted!");
+        if (!validateForm()) return;
+
+        console.log(formData);
+
+        emailjs.init(process.env.REACT_APP_GMAIL_PUBLICKEY); // <-- REQUIRED
+
+        emailjs.send(
+            process.env.REACT_APP_GMAIL_SERVICEID,
+            process.env.REACT_APP_GMAIL_TEMPLATEID,
+            {
+                user_fullName: formData.fullName,
+                user_mobile: formData.mobile,
+                user_email: formData.email,
+                user_companyName: formData.companyName,
+                user_city: formData.city,
+                user_message: formData.message,
+            }
+        )
+            .then(() => {
+                setSent(true);
+                alert("Message sent successfully!");
+                setFormData({
+                    user_fullName: "",
+                    user_mobile: "",
+                    user_email: "",
+                    user_companyName: "",
+                    user_city: "",
+                    user_message: "",
+                });
+            })
+            .catch((err) => {
+                console.log("Email error:", err);
+                alert("Failed to send!");
+            });
     };
 
     return (
@@ -48,14 +105,7 @@ function Contact() {
                             <input className="form-control mb-3" type="text" name="mobile" placeholder="Mobile / WhatsApp Number" onChange={handleChange} />
                             <input className="form-control mb-3" type="email" name="email" placeholder="Business Email Address" onChange={handleChange} />
 
-                            <div className="row">
-                                <div className="col-md-6 mb-3">
-                                    <input className="form-control" type="text" name="city" placeholder="City" onChange={handleChange} />
-                                </div>
-                                <div className="col-md-6 mb-3">
-                                    <input className="form-control" type="text" name="country" placeholder="Country" onChange={handleChange} />
-                                </div>
-                            </div>
+                            <input className="form-control mb-3" type="text" name="city" placeholder="City" onChange={handleChange} />
 
                             <button className="btn btn-dark px-4">Submit</button>
                         </form>
@@ -66,24 +116,15 @@ function Contact() {
                         <div className="contact-box text-white p-4 rounded">
                             <h4 className="fw-bold mb-3">Contact Info</h4>
                             <p>
-                                Plot No. 15,16,17 Survey No.255,<br />
-                                Reveira Industrial Estate, Near GEB Substation,<br />
-                                Shapar (Veraval), Rajkot 360024
+                                {process.env.REACT_APP_COMPANY_ADDRESS1},<br />
+                                {process.env.REACT_APP_COMPANY_ADDRESS2}
                             </p>
 
-                            <p><b>Admin Support:</b> tirupaticnc@yahoo.in</p>
-                            <p><b>Sales Support:</b><br />sales@tirupaticnc.in<br />sales.tirupaticnc@gmail.com</p>
+                            <p><b>Admin Support:</b> {process.env.REACT_APP_COMPANY_EMAIL}</p>
+                            <p><b>Sales Support:</b> {process.env.REACT_APP_COMPANY_EMAIL}</p>
 
-                            <p className="mb-1">📞 +91 99255 59087</p>
-                            <p className="mb-1">📞 +91 99298 20087</p>
-                            <p className="mb-1">📞 +91 99255 9087</p>
-
-                            <div className="mt-3">
-                                <a href="#" className="me-3 text-white fs-5"><i className="bi bi-facebook"></i></a>
-                                <a href="#" className="me-3 text-white fs-5"><i className="bi bi-instagram"></i></a>
-                                <a href="#" className="me-3 text-white fs-5"><i className="bi bi-linkedin"></i></a>
-                                <a href="#" className="me-3 text-white fs-5"><i className="bi bi-youtube"></i></a>
-                            </div>
+                            <p className="mb-1">📞 {process.env.REACT_APP_COMPANY_MOBILE_COUNTRYCODE} {process.env.REACT_APP_COMPANY_MOBILE1}</p>
+                            <p className="mb-1">📞 {process.env.REACT_APP_COMPANY_MOBILE_COUNTRYCODE} {process.env.REACT_APP_COMPANY_MOBILE2}</p>
                         </div>
                     </div>
 

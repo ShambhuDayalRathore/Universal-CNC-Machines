@@ -9,9 +9,9 @@ function Footer() {
 
                     {/* ===== Company Info ===== */}
                     <div className="col-md-3 mb-4">
-                        <h4 className="fw-bold text-uppercase">Universal CNC Machines</h4>
+                        <h4 className="fw-bold text-uppercase">{process.env.REACT_APP_COMPANY_NAME}</h4>
                         <p className="small">
-                            We are Faridabad (UP) based <b>CNC Spring Formers &
+                            We are {process.env.REACT_APP_COMPANY_CITY} based <b>CNC Spring Formers &
                                 Machines manufacturer.</b>
                         </p>
 
@@ -39,17 +39,17 @@ function Footer() {
                         <h5 className="footer-title">Contact Information</h5>
 
                         <p className="small">
-                            Plot No. 77, Shiv Colony, Sector-22,<br />
-                            Faridabad-121005
+                            {process.env.REACT_APP_COMPANY_ADDRESS1},<br />
+                            {process.env.REACT_APP_COMPANY_ADDRESS2}
                         </p>
 
                         <p className="small">
-                            📞 (+91) 8586862367, <br />
-                            📞 (+91) 9810733911
+                            📞 ({process.env.REACT_APP_COMPANY_MOBILE_COUNTRYCODE}) {process.env.REACT_APP_COMPANY_MOBILE1}, <br />
+                            📞 ({process.env.REACT_APP_COMPANY_MOBILE_COUNTRYCODE}) {process.env.REACT_APP_COMPANY_MOBILE2}
                         </p>
 
                         <p className="small">
-                            universalcncmachines@gmail.com
+                            {process.env.REACT_APP_COMPANY_EMAIL}
                         </p>
 
                         <div className="social-icons">
@@ -86,8 +86,8 @@ function Footer() {
                 <hr className="footer-line" />
 
                 <div className="text-center pb-3 small">
-                    © {new Date().getFullYear()} Universal CNC Machines. All Rights Reserved. |
-                    Managed by <b>Universal CNC Machines</b>
+                    © {new Date().getFullYear()} {process.env.REACT_APP_COMPANY_NAME}. All Rights Reserved. |
+                    Managed by <b>{process.env.REACT_APP_COMPANY_NAME}</b>
                 </div>
             </div>
         </footer>
