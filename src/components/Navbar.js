@@ -4,7 +4,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container">
-                <Link className="navbar-brand" to="/">MyWebsite</Link>
+                <Link className="navbar-brand" to="/">Universal CNC Machines</Link>
 
                 <div className="collapse navbar-collapse show">
                     <ul className="navbar-nav ms-auto">
@@ -14,7 +14,7 @@ function Navbar() {
                         <li className="nav-item"><Link className="nav-link" to="/services">Services</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/reach-us">Reach Us</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/admin">Admin</Link></li>
+                        {/* <li className="nav-item"><Link className="nav-link" to="/admin">Admin</Link></li> */}
                     </ul>
                 </div>
             </div>

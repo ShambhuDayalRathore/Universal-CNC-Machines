@@ -121,3 +121,22 @@ body {
 .footer-line {
   border-color: rgba(255, 255, 255, 0.2);
 }
+
+.video-box {
+  height: 250px;
+  background: #e8e8e8 url("https://cdn-icons-png.flaticon.com/512/2875/2875356.png") center no-repeat;
+  background-size: 80px;
+}
+
+.counter-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+}
+
+.counter-box h3 {
+  color: #009879;
+  font-weight: bold;
+}

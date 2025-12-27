@@ -8,28 +8,28 @@ function Footer() {
 
                     {/* ===== Company Info ===== */}
                     <div className="col-md-3 mb-4">
-                        <h4 className="fw-bold text-uppercase">Tirupati</h4>
+                        <h4 className="fw-bold text-uppercase">Universal CNC Machines</h4>
                         <p className="small">
-                            We are Rajkot (Gujarat) based <b>CNC Lathe Machines & Lathe
+                            We are Faridabad (UP) based <b>CNC Spring Formers &
                                 Machines manufacturer.</b>
                         </p>
 
-                        <h6 className="mt-4">Website Visitors</h6>
+                        {/* <h6 className="mt-4">Website Visitors</h6>
                         <div className="visitor-counter">
                             012345
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* ===== Our Products ===== */}
                     <div className="col-md-3 mb-4">
                         <h5 className="footer-title">Our Products</h5>
                         <ul className="footer-list">
-                            <li>CNC Lathe Machine</li>
-                            <li>CNC Turning Machine</li>
-                            <li>VMC Drilling Machine</li>
-                            <li>CNC Drilling Machine</li>
-                            <li>CNC Roll Turning Lathe</li>
-                            <li>Conventional Lathe</li>
+                            <li>CNC Spring Formers</li>
+                            <li>CNC Spring Coilers</li>
+                            <li>CNC Wire Benders</li>
+                            <li>Conveyor Furnace</li>
+                            <li>Testing Machines</li>
+                            <li>Vision Inspection Machine</li>
                         </ul>
                     </div>
 
@@ -38,19 +38,17 @@ function Footer() {
                         <h5 className="footer-title">Contact Information</h5>
 
                         <p className="small">
-                            Plot No. 15,16,17 Survey No.255,<br />
-                            Revera Industrial Estate, Near GEB Substation,<br />
-                            Shapar (Veraval), Rajkot – 360024
+                            Plot No. 77, Shiv Colony, Sector-22,<br />
+                            Faridabad-121005
                         </p>
 
                         <p className="small">
-                            📞 (+91) 9925151087 / 9925120087 <br />
-                            📞 (+91) 9925559087
+                            📞 (+91) 8586862367, <br />
+                            📞 (+91) 9810733911
                         </p>
 
                         <p className="small">
-                            <b>Admin:</b> tirupaticnc@yahoo.in <br />
-                            <b>Sales:</b> sales@tirupaticnc.in
+                            universalcncmachines@gmail.com
                         </p>
 
                         <div className="social-icons">
@@ -69,11 +67,10 @@ function Footer() {
                             <span>🇮🇳 Make in India</span>
                         </div>
 
-                        <button className="btn btn-outline-light btn-sm mb-4">
+                        {/* <button className="btn btn-outline-light btn-sm mb-4">
                             Download Brochure
-                        </button>
+                        </button> */}
 
-                        <h5 className="footer-title mt-3">Quick Link</h5>
                         <ul className="footer-list">
                             <li>
                                 <Link to="/sitemap" className="footer-link">
@@ -88,8 +85,8 @@ function Footer() {
                 <hr className="footer-line" />
 
                 <div className="text-center pb-3 small">
-                    © 2025 Tirupati CNC Products. All Rights Reserved. |
-                    Managed by <b>ADSENGINE MEDIA</b>
+                    © {new Date().getFullYear()} Universal CNC Machines. All Rights Reserved. |
+                    Managed by <b>Universal CNC Machines</b>
                 </div>
             </div>
         </footer>
